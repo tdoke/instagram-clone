@@ -70,7 +70,7 @@ const Profile = (props: any) => {
             <StyledCol md={12}>
               <Row justify="space-between" align="top">
                 <Col md={4}>
-                  <img src={images[selectedFramework.img]} />
+                  <img src={images[selectedFramework.img]} alt="" />
                 </Col>
                 <Col md={16}>
                   <Row>

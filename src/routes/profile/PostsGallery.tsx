@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
+import PostPopup from "./PostPopup";
 
 const StyledPostsGallery = styled.div`
   display: flex;
@@ -28,19 +29,34 @@ export interface PostsGalleryProps {
 }
 
 const PostsGallery: React.SFC<PostsGalleryProps> = ({ images }) => {
+  const [imageId, setImageId] = React.useState(0);
+  const [open, toggle] = React.useState(false);
+
+  const clickedImage = images.find(({ id }) => id === imageId);
   const shuffledImages = images.sort(function(a, b) {
     return 0.5 - Math.random();
   });
   return (
-    <StyledPostsGallery>
-      <StyledImagesContainer>
-        {shuffledImages.map((img, index) => (
-          <StyledImageContainer>
-            <StyledImage src={img} key={index} />
-          </StyledImageContainer>
-        ))}
-      </StyledImagesContainer>
-    </StyledPostsGallery>
+    <>
+      <StyledPostsGallery>
+        <StyledImagesContainer>
+          {shuffledImages.map(img => (
+            <StyledImageContainer>
+              <StyledImage
+                src={img.img}
+                key={img.id}
+                alt=""
+                onClick={() => { 
+                  setImageId(img.id);
+                  toggle(true); 
+                }}
+              />
+            </StyledImageContainer>
+          ))}
+        </StyledImagesContainer>
+      </StyledPostsGallery>
+      <PostPopup image={clickedImage} open={open} toggle={toggle}/>
+    </>
   );
 };
 
