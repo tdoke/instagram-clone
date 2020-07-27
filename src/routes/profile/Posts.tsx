@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import PostPopup from "./PostPopup";
 
-const StyledPostsGallery = styled.div`
+const StyledPosts = styled.div`
   display: flex;
   justify-content: center;
 `;
@@ -24,11 +24,11 @@ const StyledImage = styled.img`
     cursor: pointer;
   }
 `;
-export interface PostsGalleryProps {
+export interface PostsProps {
   images: any[];
 }
 
-const PostsGallery: React.SFC<PostsGalleryProps> = ({ images }) => {
+const Posts: React.SFC<PostsProps> = ({ images }) => {
   const [imageId, setImageId] = React.useState(0);
   const [open, toggle] = React.useState(false);
 
@@ -38,7 +38,7 @@ const PostsGallery: React.SFC<PostsGalleryProps> = ({ images }) => {
   });
   return (
     <>
-      <StyledPostsGallery>
+      <StyledPosts>
         <StyledImagesContainer>
           {shuffledImages.map(img => (
             <StyledImageContainer>
@@ -54,10 +54,10 @@ const PostsGallery: React.SFC<PostsGalleryProps> = ({ images }) => {
             </StyledImageContainer>
           ))}
         </StyledImagesContainer>
-      </StyledPostsGallery>
+      </StyledPosts>
       <PostPopup image={clickedImage} open={open} toggle={toggle}/>
     </>
   );
 };
 
-export default PostsGallery;
+export default Posts;
