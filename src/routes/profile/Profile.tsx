@@ -1,10 +1,10 @@
 import * as React from "react";
+import { renderRoutes } from "react-router-config";
 import BaseLayout from "layouts/BaseLayout";
 import { images, frameworks, Framework } from "framework-logos";
 import styled from "styled-components";
 import { Row } from "antd";
 import galleryImages from "gallery-images";
-import Posts from "./Posts";
 import Header from "./Header";
 
 const StyledRow = styled(Row)`
@@ -28,6 +28,7 @@ const StyledPostGallery = styled.div`
 
 const Profile = (props: any) => {
   const { profileName } = props.match.params;
+  const { routes } = props.route;
   const selectedFramework: Framework | undefined = frameworks.find(
     fmk => fmk.name === profileName
   ) || { name: "", year: 0, img: "" };
@@ -44,7 +45,7 @@ const Profile = (props: any) => {
           </StyledRow>
           <StyledSeperator />
           <StyledPostGallery>
-            <Posts images={galleryImages} />
+            { renderRoutes(routes, { images: galleryImages }) }
           </StyledPostGallery>
         </>
       }

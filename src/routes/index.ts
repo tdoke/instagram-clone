@@ -1,6 +1,7 @@
 import Home from './home/';
 import Profile from './profile/';
-const routes = [
+import Posts from './profile/Posts';
+const routes: any[] = [
   {
     path: "/",
     exact: true,
@@ -8,8 +9,13 @@ const routes = [
   },
   {
     path: "/profile/:profileName",
-    exact: true,
-    component: Profile
+    component: Profile,
+    routes: [
+      {
+        path: "/profile/:profileName/posts",
+        component: Posts
+      }
+    ]
   }
 ];
 

@@ -68,7 +68,7 @@ const getSuggestions = (value: string): Suggestion[] => {
 // based on the clicked suggestion. Teach Autosuggest how to calculate the
 // input value for every given suggestion.
 const getSuggestionValue = (suggestion: Suggestion) => {
-  history.push(`/profile/${suggestion.name}`);
+  history.push(`/profile/${suggestion.name}/posts`);
   return suggestion.name;
 };
 
