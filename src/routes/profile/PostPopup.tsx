@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
+import { CloseOutlined } from '@ant-design/icons';
 
 const StyledPostContainer = styled.div`
   display: flex;
@@ -32,7 +33,18 @@ const StyledModal = styled.div`
 const StyledModalContent = styled.div`
   position: absolute;
 `;
-
+const StyledCloseOutlined = styled(CloseOutlined)`
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+  svg {
+    height: 25px;
+    width: 25px;
+  }
+  padding: 1rem 0.5rem;
+  cursor: pointer;
+`;
 export interface PostPopupProps {
   image: { id: number; img: any };
   open: boolean;
@@ -48,9 +60,10 @@ const PostPopup: React.SFC<PostPopupProps> = ({
     <>
       {open && (
         <StyledModal>
-          <StyledModalContent onClick={() => toggle(false)}>
+          <StyledCloseOutlined onClick={() => toggle(false)} />
+          <StyledModalContent>
             <StyledPostContainer>
-              <StyledImage src={image.img} />
+              <StyledImage src={image.img} alt="" />
               <StyledPost />
             </StyledPostContainer>
           </StyledModalContent>
