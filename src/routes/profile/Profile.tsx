@@ -7,24 +7,24 @@ import { Row } from "antd";
 import galleryImages from "gallery-images";
 import Header from "./Header";
 
-const StyledRow = styled(Row)`
-  padding: 10px;
-`;
-
-const StyledSeperator = styled.div`
-  &:after {
-    display: block;
-    margin: 0 auto;
-    height: 1px;
-    background-color: #d7d7d7;
-    content: "";
-    width: 56.5%;
-  }
-`;
-
-const StyledPostGallery = styled.div`
-  margin-top: 1rem;
-`;
+const S = {
+  Row: styled(Row)`
+    padding: 10px;
+  `,
+  Seperator: styled.div`
+    &:after {
+      display: block;
+      margin: 0 auto;
+      height: 1px;
+      background-color: #d7d7d7;
+      content: "";
+      width: 56.5%;
+    }
+  `,
+  PostGallery: styled.div`
+    margin-top: 1rem;
+  `
+};
 
 const Profile = (props: any) => {
   const { profileName } = props.match.params;
@@ -37,16 +37,16 @@ const Profile = (props: any) => {
     <BaseLayout
       body={
         <>
-          <StyledRow justify="center">
+          <S.Row justify="center">
             <Header
               image={images[selectedFramework.img]}
               name={selectedFramework.name}
             />
-          </StyledRow>
-          <StyledSeperator />
-          <StyledPostGallery>
-            { renderRoutes(routes, { images: galleryImages }) }
-          </StyledPostGallery>
+          </S.Row>
+          <S.Seperator />
+          <S.PostGallery>
+            {renderRoutes(routes, { images: galleryImages })}
+          </S.PostGallery>
         </>
       }
     />

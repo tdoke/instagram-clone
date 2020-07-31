@@ -2,28 +2,30 @@ import * as React from "react";
 import styled from "styled-components";
 import PostPopup from "./PostPopup";
 
-const StyledPosts = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-const StyledImagesContainer = styled.div`
-  display: flex;
-  flex-basis: 70%;
-  flex-wrap: wrap;
-  justify-content: center;
-`;
-const StyledImageContainer = styled.div`
-  background-color: #000;
-  margin: 0.8rem;
-`;
-const StyledImage = styled.img`
-  height: 300px;
-  width: 300px;
-  &:hover {
-    opacity: 0.6;
-    cursor: pointer;
-  }
-`;
+const S = {
+  Posts: styled.div`
+    display: flex;
+    justify-content: center;
+  `,
+  ImagesContainer: styled.div`
+    display: flex;
+    flex-basis: 70%;
+    flex-wrap: wrap;
+    justify-content: center;
+  `,
+  ImageContainer: styled.div`
+    background-color: #000;
+    margin: 0.8rem;
+  `,
+  Image: styled.img`
+    height: 300px;
+    width: 300px;
+    &:hover {
+      opacity: 0.6;
+      cursor: pointer;
+    }
+  `
+};
 export interface PostsProps {
   images: any[];
 }
@@ -38,24 +40,24 @@ const Posts: React.SFC<PostsProps> = ({ images }) => {
   });
   return (
     <>
-      <StyledPosts>
-        <StyledImagesContainer>
+      <S.Posts>
+        <S.ImagesContainer>
           {shuffledImages.map(img => (
-            <StyledImageContainer>
-              <StyledImage
+            <S.ImageContainer>
+              <S.Image
                 src={img.img}
                 key={img.id}
                 alt=""
-                onClick={() => { 
+                onClick={() => {
                   setImageId(img.id);
-                  toggle(true); 
+                  toggle(true);
                 }}
               />
-            </StyledImageContainer>
+            </S.ImageContainer>
           ))}
-        </StyledImagesContainer>
-      </StyledPosts>
-      <PostPopup image={clickedImage} open={open} toggle={toggle}/>
+        </S.ImagesContainer>
+      </S.Posts>
+      <PostPopup image={clickedImage} open={open} toggle={toggle} />
     </>
   );
 };

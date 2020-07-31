@@ -2,36 +2,33 @@ import * as React from "react";
 import styled from "styled-components";
 import { Row, Col } from "antd";
 
-const StyledLabel = styled.div`
-  display: inline-block;
-  margin-right: 40px;
-  font-size: 1rem;
-`;
-
-const StyledCol = styled(Col)`
-  margin-top: 30px;
-`;
-
-const StyledFrameworkName = styled.span`
-  font-size: 1.5rem;
-`;
-
-const StyledNumberDashboard = styled(Row)`
-  margin-top: 10px;
-`;
-
-const StyledNumber = styled.span`
-  font-size: 1.4rem;
-  font-weight: bold;
-`;
-const StyledText = styled.span`
-  font-size: 1rem;
-`;
-
-const StyledDescription = styled(Row)`
-  font-size: 1rem;
-  margin-top: 20px;
-`;
+const S = {
+  Label: styled.div`
+    display: inline-block;
+    margin-right: 40px;
+    font-size: 1rem;
+  `,
+  Col: styled(Col)`
+    margin-top: 30px;
+  `,
+  FrameworkName: styled.span`
+    font-size: 1.5rem;
+  `,
+  NumberDashboard: styled(Row)`
+    margin-top: 10px;
+  `,
+  Number: styled.span`
+    font-size: 1.4rem;
+    font-weight: bold;
+  `,
+  Text: styled.span`
+    font-size: 1rem;
+  `,
+  Description: styled(Row)`
+    font-size: 1rem;
+    margin-top: 20px;
+  `
+};
 
 export interface HeaderProps {
   image: any;
@@ -40,7 +37,7 @@ export interface HeaderProps {
 
 const Header: React.SFC<HeaderProps> = ({ image, name }) => {
   return (
-    <StyledCol md={12}>
+    <S.Col md={12}>
       <Row justify="space-between" align="top">
         <Col md={4}>
           <img src={image} alt="" />
@@ -48,29 +45,29 @@ const Header: React.SFC<HeaderProps> = ({ image, name }) => {
         <Col md={16}>
           <Row>
             <Col>
-              <StyledFrameworkName>{name}</StyledFrameworkName>
+              <S.FrameworkName>{name}</S.FrameworkName>
             </Col>
           </Row>
-          <StyledNumberDashboard justify="space-between">
+          <S.NumberDashboard justify="space-between">
             <Col>
-              <StyledLabel>
-                <StyledNumber>34k</StyledNumber>
+              <S.Label>
+                <S.Number>34k</S.Number>
                 {` `}
-                <StyledText>watch</StyledText>
-              </StyledLabel>
-              <StyledLabel>
-                <StyledNumber>4k</StyledNumber>
+                <S.Text>watch</S.Text>
+              </S.Label>
+              <S.Label>
+                <S.Number>4k</S.Number>
                 {` `}
-                <StyledText>star</StyledText>
-              </StyledLabel>
-              <StyledLabel>
-                <StyledNumber>5k</StyledNumber>
+                <S.Text>star</S.Text>
+              </S.Label>
+              <S.Label>
+                <S.Number>5k</S.Number>
                 {` `}
-                <StyledText>fork</StyledText>
-              </StyledLabel>
+                <S.Text>fork</S.Text>
+              </S.Label>
             </Col>
-          </StyledNumberDashboard>
-          <StyledDescription>
+          </S.NumberDashboard>
+          <S.Description>
             <Col>
               <p>A JavaScript library for building user interfaces.</p>
               <p>Declarative, Component-Based, Learn Once, Write Anywhere</p>
@@ -78,10 +75,10 @@ const Header: React.SFC<HeaderProps> = ({ image, name }) => {
                 <a href="https://reactjs.org/">Check out</a>
               </p>
             </Col>
-          </StyledDescription>
+          </S.Description>
         </Col>
       </Row>
-    </StyledCol>
+    </S.Col>
   );
 };
 

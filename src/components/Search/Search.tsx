@@ -77,7 +77,7 @@ const renderSuggestion = (suggestion: Suggestion) => (
   <StyledSuggestion>
     <Row gutter={16} align="middle">
       <Col md={4}>
-        <img src={images[suggestion.img]} />
+        <img src={images[suggestion.img]} alt=""/>
       </Col>
       <Col md={20}>{suggestion.name}</Col>
     </Row>
