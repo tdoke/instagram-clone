@@ -24,8 +24,8 @@ const S = {
     right: 0;
     color: white;
     svg {
-      height: 25px;
-      width: 25px;
+      height: 2.5rem;
+      width: 2.5rem;
     }
     padding: 1rem 0.5rem;
     cursor: pointer;
@@ -38,12 +38,12 @@ const S = {
     flex-direction: row;
   `,
   Image: styled.img`
-    height: 600px;
-    width: 600px;
+    height: 60rem;
+    width: 60rem;
   `,
   Post: styled.div`
     background-color: white;
-    width: 400px;
+    width: 40rem;
   `
 };
 

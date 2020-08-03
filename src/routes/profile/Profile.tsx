@@ -9,13 +9,13 @@ import Header from "./Header";
 
 const S = {
   Row: styled(Row)`
-    padding: 10px;
+    padding: 1rem;
   `,
   Seperator: styled.div`
     &:after {
       display: block;
       margin: 0 auto;
-      height: 1px;
+      height: 0.1rem;
       background-color: ${props => props.theme.color.grey.base};
       content: "";
       width: 56.5%;

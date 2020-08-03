@@ -18,8 +18,8 @@ const S = {
     margin: 0.8rem;
   `,
   Image: styled.img`
-    height: 300px;
-    width: 300px;
+    height: 30rem;
+    width: 30rem;
     &:hover {
       opacity: 0.6;
       cursor: pointer;

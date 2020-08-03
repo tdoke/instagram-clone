@@ -5,29 +5,28 @@ import { Row, Col } from "antd";
 const S = {
   Label: styled.div`
     display: inline-block;
-    margin-right: 40px;
+    margin-right: 4rem;
     font-size: 1rem;
   `,
   Col: styled(Col)`
-    margin-top: 30px;
+    margin-top: 3rem;
   `,
   FrameworkName: styled.span`
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     color: ${props => props.theme.color.grey.darkest};
   `,
   NumberDashboard: styled(Row)`
-    margin-top: 10px;
+    margin-top: 1rem;
   `,
   Number: styled.span`
-    font-size: 1.4rem;
+    font-size: 2rem;
     color: ${props => props.theme.color.grey.darkest};
   `,
   Text: styled.span`
-    font-size: 1rem;
+    font-size: 1.5rem;
   `,
   Description: styled(Row)`
-    font-size: 1rem;
-    margin-top: 20px;
+    margin-top: 2rem;
   `
 };
 

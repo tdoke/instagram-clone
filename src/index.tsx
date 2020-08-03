@@ -5,19 +5,20 @@ import { renderRoutes } from "react-router-config";
 import { Router } from "react-router";
 import routes from "./routes/";
 import * as serviceWorker from "./serviceWorker";
-import { history  } from './routes/history';
-import { ThemeProvider } from 'styled-components';
-import baseTheme from './theme';
+import { history } from "./routes/history";
+import { ThemeProvider } from "styled-components";
+import baseTheme from "./styles/theme";
+import GlobalStyles from "./styles/globalStyles";
 import "./index.css";
-
 
 const renderApp = () => (
   <React.StrictMode>
-    <Suspense fallback={<div>...loading</div>}>
-      <ThemeProvider theme={baseTheme}>
+    <GlobalStyles />
+    <ThemeProvider theme={baseTheme}>
+      <Suspense fallback={<div>...loading</div>}>
         <Router history={history}>{renderRoutes(routes)}</Router>
-      </ThemeProvider>
-    </Suspense>
+      </Suspense>
+    </ThemeProvider>
   </React.StrictMode>
 );
 
