@@ -16,7 +16,7 @@ const S = {
       display: block;
       margin: 0 auto;
       height: 1px;
-      background-color: #d7d7d7;
+      background-color: ${props => props.theme.color.grey.base};
       content: "";
       width: 56.5%;
     }

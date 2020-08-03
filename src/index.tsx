@@ -6,13 +6,17 @@ import { Router } from "react-router";
 import routes from "./routes/";
 import * as serviceWorker from "./serviceWorker";
 import { history  } from './routes/history';
+import { ThemeProvider } from 'styled-components';
+import baseTheme from './theme';
 import "./index.css";
 
 
 const renderApp = () => (
   <React.StrictMode>
     <Suspense fallback={<div>...loading</div>}>
-      <Router history={history}>{renderRoutes(routes)}</Router>
+      <ThemeProvider theme={baseTheme}>
+        <Router history={history}>{renderRoutes(routes)}</Router>
+      </ThemeProvider>
     </Suspense>
   </React.StrictMode>
 );

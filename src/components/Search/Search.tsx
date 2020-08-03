@@ -11,7 +11,6 @@ const StyledSuggestion = styled.div`
 const StyledWrapper = styled.div`
   .react-autosuggest__input {
     width: 100%;
-    margin-top: 25px;
     border: 1px solid lightgrey;
     outline: none;
   }

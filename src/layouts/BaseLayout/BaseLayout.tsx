@@ -4,10 +4,13 @@ import Navbar from 'components/Navbar';
 
 const HeaderWrapper = styled.div`
   width: 100vw;
+  color: ${props => props.theme.color.grey.dark};
+  background-color: ${props => props.theme.color.white.base};
 `;
 const BodyWrapper = styled.div`
   height: 100vh;
-  background-color: #f6f6f6;
+  background-color: ${props => props.theme.color.grey.lightest};
+  color: ${props => props.theme.color.grey.dark};
 `;
 
 export interface BaseLayoutProps {

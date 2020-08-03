@@ -13,13 +13,14 @@ const S = {
   `,
   FrameworkName: styled.span`
     font-size: 1.5rem;
+    color: ${props => props.theme.color.grey.darkest};
   `,
   NumberDashboard: styled(Row)`
     margin-top: 10px;
   `,
   Number: styled.span`
     font-size: 1.4rem;
-    font-weight: bold;
+    color: ${props => props.theme.color.grey.darkest};
   `,
   Text: styled.span`
     font-size: 1rem;
