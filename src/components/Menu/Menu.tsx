@@ -1,28 +1,39 @@
 import * as React from "react";
 import { Menu as AntMenu } from "antd";
 import { AppstoreOutlined } from "@ant-design/icons";
+import style from 'styled-components';
+import { history } from "routes/history";
 
-const { SubMenu, Item } = AntMenu;
+const S = {
+  AntMenu: style(AntMenu)`
+    position: relative;
+    z-index: 9999;
+`};
+const { SubMenu, Item } = S.AntMenu;
 
 export interface MenuProps {}
 
 const Menu: React.SFC<MenuProps> = () => {
   return (
     <>
-      <AntMenu
-        onClick={() => {
-          console.log("clicked on Menu Item");
+      <S.AntMenu
+        onClick={( { key }: any) => {
+          const path = key === "1" 
+            ? '/user/profile/edit'
+            : key === "2"
+            ? '/post/new'
+            : "";
+          history.push(path);
         }}
         style={{ width: 256 }}
-        defaultSelectedKeys={["1"]}
-        defaultOpenKeys={["sub1"]}
         mode="inline"
       >
-        <SubMenu key="sub2" icon={<AppstoreOutlined />} title="Settings">
-          <Item key="5">Add a post</Item>
-          <Item key="6">Switch User</Item>
+        <SubMenu key="sub1" icon={<AppstoreOutlined />} title="Settings">
+          <Item key="1">My Profile</Item>
+          <Item key="2">Add a post</Item>
+          <Item key="3">Switch User</Item>
         </SubMenu>
-      </AntMenu>
+      </S.AntMenu>
     </>
   );
 };
