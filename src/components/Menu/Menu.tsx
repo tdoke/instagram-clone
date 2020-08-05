@@ -15,8 +15,8 @@ const { SubMenu, Item } = S.AntMenu;
 export interface MenuProps {}
 
 const Menu: React.SFC<MenuProps> = () => {
-  const [open, toggle] =  React.useState(false);
-
+  const [isOpen, toggle] = React.useState(false);
+  console.log('open--', isOpen);
   return (
     <>
       <S.AntMenu
@@ -38,7 +38,7 @@ const Menu: React.SFC<MenuProps> = () => {
           <Item key="3">Switch User</Item>
         </SubMenu>
       </S.AntMenu>
-      <Popup open={open} toggle={toggle}>
+      <Popup open={isOpen} toggle={toggle}>
         Switch User
       </Popup>
     </>

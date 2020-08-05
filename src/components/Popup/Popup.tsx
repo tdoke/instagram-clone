@@ -42,7 +42,8 @@ export interface PopupProps {
   children: React.ReactNode;
 }
 
-const Popup: React.SFC<PopupProps> = ({ open = false, children, toggle }) => {
+const Popup: React.SFC<PopupProps> = ({ open, children, toggle }) => {
+  console.log('open', open);
   return (
     <>
       {open && (
