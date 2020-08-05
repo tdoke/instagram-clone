@@ -3,6 +3,7 @@ import { Menu as AntMenu } from "antd";
 import { AppstoreOutlined } from "@ant-design/icons";
 import style from 'styled-components';
 import { history } from "routes/history";
+import Popup from 'components/Popup';
 
 const S = {
   AntMenu: style(AntMenu)`
@@ -14,6 +15,8 @@ const { SubMenu, Item } = S.AntMenu;
 export interface MenuProps {}
 
 const Menu: React.SFC<MenuProps> = () => {
+  const [open, toggle] =  React.useState(false);
+
   return (
     <>
       <S.AntMenu
@@ -23,7 +26,8 @@ const Menu: React.SFC<MenuProps> = () => {
             : key === "2"
             ? '/post/new'
             : "";
-          history.push(path);
+          path === "" && history.push(path);
+          key === "3" && toggle(true);
         }}
         style={{ width: 256 }}
         mode="inline"
@@ -34,6 +38,9 @@ const Menu: React.SFC<MenuProps> = () => {
           <Item key="3">Switch User</Item>
         </SubMenu>
       </S.AntMenu>
+      <Popup open={open} toggle={toggle}>
+        Switch User
+      </Popup>
     </>
   );
 };
