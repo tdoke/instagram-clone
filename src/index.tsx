@@ -7,12 +7,14 @@ import routes from "./routes/";
 import * as serviceWorker from "./serviceWorker";
 import { history } from "./routes/history";
 import { ThemeProvider } from "styled-components";
+import { Normalize } from "styled-normalize";
 import baseTheme from "./styles/theme";
 import GlobalStyles from "./styles/globalStyles";
 import "./index.css";
 
 const renderApp = () => (
   <React.StrictMode>
+    {/* <Normalize /> */}
     <GlobalStyles />
     <ThemeProvider theme={baseTheme}>
       <Suspense fallback={<div>...loading</div>}>

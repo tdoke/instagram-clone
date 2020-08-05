@@ -7,7 +7,7 @@ import { history } from "routes/history";
 const S = {
   AntMenu: style(AntMenu)`
     position: relative;
-    z-index: 9999;
+    z-index: 8888;
 `};
 const { SubMenu, Item } = S.AntMenu;
 
