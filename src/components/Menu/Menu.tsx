@@ -26,7 +26,7 @@ const Menu: React.SFC<MenuProps> = () => {
             : key === "2"
             ? '/post/new'
             : "";
-          path === "" && history.push(path);
+          path !== "" && history.push(path);
           key === "3" && toggle(true);
         }}
         style={{ width: 256 }}
