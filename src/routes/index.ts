@@ -3,6 +3,9 @@ import Profile from "./profile/";
 import Posts from "./profile/Posts";
 import MyProfile from "./my-profile";
 import AddPost from "./add-post";
+import EditDetails from "./my-profile/EditDetails";
+import ChangePass from "./my-profile/ChangePass";
+
 const routes: any[] = [
   {
     path: "/",
@@ -22,7 +25,16 @@ const routes: any[] = [
   {
     path: "/user/profile/edit",
     component: MyProfile,
-    exact: true
+    routes: [
+      {
+        path: "/user/profile/edit/details",
+        component: EditDetails
+      },
+      {
+        path: "/user/profile/edit/pwd",
+        component: ChangePass
+      }
+    ]
   },
   {
     path: "/post/new",
