@@ -30,7 +30,7 @@ const TwoWayLayout: React.SFC<TwoWayLayoutProps> = ({ left, right }) => {
             <Col md={7}>
               <LeftLayout>{left}</LeftLayout>
             </Col>
-            <Col>
+            <Col md={17}>
               <RightLayout>{right}</RightLayout>
             </Col>
           </Row>
